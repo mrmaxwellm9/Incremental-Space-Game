@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Space Explorer Incremental</title>
+</head>
+<body>
+    <div id="container">
+        <div id="top-section" class="section">
+            <div class="region">
+                <h2 style="margin-bottom:18px;">General Upgrades</h2>
+                <div id="general-upgrades">
+                    <button class="general-upgrade-btn" id="increase-speed-btn">Increase Base Speed (Cost: 0.1 SP)</button>
+                    <button class="general-upgrade-btn" id="increase-speed-upgrade">Increase Base Speed Upgrade 2 (Cost: 1 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade3-btn">Upgrade 3 (Cost: 30 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade4-btn">Upgrade 4 (Cost: 40 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade5-btn">Upgrade 5 (Cost: 50 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade6-btn">Upgrade 6 (Cost: 60 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade7-btn">Upgrade 7 (Cost: 70 SP)</button>
+                    <button class="general-upgrade-btn" id="upgrade8-btn">Upgrade 8 (Cost: 80 SP)</button>
+                    <!-- Upgrade buttons dynamically added using JavaScript -->
+                </div>
+                <p id="stellar-points">Stellar Points: 0</p>
+            </div>
+            <div class="region">
+                <h2 style="margin-bottom:18px;">Booster Upgrades</h2>
+                <div id="boost-upgrades">
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn" id="boost-upgrade1-btn">Booster Upgrade 1 (Cost: 10 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider1" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value1">0%</span>
+                    </div>
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn " id="boost-upgrade2-btn">Booster Upgrade 2 (Cost: 20 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider2" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value2">0%</span>
+                    </div>
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn" id="boost-upgrade3-btn">Booster Upgrade 3 (Cost: 30 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider3" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value3">0%</span>
+                    </div>
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn" id="boost-upgrade4-btn">Booster Upgrade 4 (Cost: 40 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider4" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value4">0%</span>
+                    </div>
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn" id="boost-upgrade5-btn">Booster Upgrade 5 (Cost: 50 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider5" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value5">0%</span>
+                    </div>
+                    <div class="boost-upgrade">
+                        <button class="boost-upgrade-btn" id="boost-upgrade6-btn">Booster Upgrade 6 (Cost: 60 SP)</button>
+                        <input type="range" class="boost-slider" id="boost-slider6" min="0" max="200" value="0">
+                        <span class="slider-value" id="boost-slider-value6">0%</span>
+                    </div>
+                </div>
+                <div class="fuel-and-speed">
+                    <p id="fuel-level">Fuel Level: 100%</p>
+                    <p id="speed">Speed: 0.1 m/s</p>
+                </div>
+            </div>
+            <div id="corn-farm" class="region">
+                <h2>Corn Farm</h2>
+                <div class="corn-plot-container">
+                    <div class="corn-column">
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="circle corn-selection-btn yellow" data-plant-type="yellow"></div>
+                    </div>
+                    <div class="corn-column disabled">
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="circle corn-selection-btn white" data-plant-type="white"></div>
+                    </div>
+                    <div class="corn-column disabled">
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="circle corn-selection-btn purple" data-plant-type="purple"></div>
+                    </div>
+                    <div class="corn-column disabled">
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="circle corn-selection-btn red" data-plant-type="red"></div>
+                    </div>
+                    <div class="corn-column disabled">
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="corn-plot"><div class="timer">0:00</div></div>
+                        <div class="circle corn-selection-btn blue" data-plant-type="blue"></div>
+                    </div>
+                </div>
+                <div class="corn-and-convert">
+                    <p id="corn-counter">Corn Amount: 0</p>
+                    <button id="convert-btn">Convert Corn to Fuel</button>
+                    <p class="selected-corn-type">Selected Corn Type: None</p>
+                </div>               
+            </div>
+
+            <div id="progression" >
+                <h2>Progression</h2>
+                <div class="scene">
+                    <div class="rocketship">
+                        <img src="rocketship.png" style="width: 33%;">
+                    </div>
+                    <p id="distance-traveled">Distance Traveled: 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="general_upgrades.js"></script>
+    <script src="boosters.js"></script>
+    <script src="corn.js"></script>
+    <script src="stars.js"></script>
+</body>
+</html>
